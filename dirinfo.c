@@ -67,8 +67,8 @@ void print_dir(char *dirname) {
   //while there are things in the directory to be read through
   while( (dir = readdir(d)) != 0 ) {
 
-    //recursive call: if a thing in a directory is a subdirectory, call print_dir on it
-    if(dir->d_type == 4 && strcmp(dir->d_name, ".") != 0 && strcmp(dir->d_name, "..") != 0) {
+    //recursive call: if a thing in a directory is a subdirectory, call print_dir on it (ignore hidden files & dirs)
+    if(dir->d_type == 4 && strncmp(dir->d_name, ".", 1) != 0) {
       char new_dir[256] = "";
       strcat(new_dir, dirname);
       strcat(new_dir, "/");
