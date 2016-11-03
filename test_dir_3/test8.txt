@@ -3,4 +3,4 @@ LSKJE
 bonjour
 hola
 guten tag
-bongiorno
+buongiorno
